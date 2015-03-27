@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head >
+    <meta charset="UTF-8">
+    <title>微信JSSDK分享到朋友圈、微博、QQ好友。</title>
+    <script src="js/jquery-1.11.1.js"></script>
+    <script src="js/jquery.sha1.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script src="js/jquery.wechat.share.js"></script>
+    <script>
+        $(function(){
+            var shareData = {
+                title: '标题',
+                desc: '简介',
+                link: '分享的链接。一般可以用location.href',
+                imgUrl: '分享的图片链接地址(图片一定要是网络图片地址哦，这样才能保证别人看到的图片是正常显示的)'
+            };
+            $.wechatShare(shareData);
+        })
+    </script>
+</head>
+<body>
+    <h1>wechatShare-JS</h1>
+
+    <p>微信JSSDK分享到朋友圈、微博、QQ好友。</p>
+
+    <h2>前置工作</h2>
+
+    <blockquote>
+        <p>1.登录微信工作平台 进入&ldquo;公众号设置&rdquo; &gt; &ldquo;功能设置&rdquo; &gt; &ldquo;JS接口安全域名&rdquo; 中 ,添加使用微信JS接口的域名(只支持域名,不支持IP)。&lt;br&gt;填写的JS接口安全域名要求是一级或一级以上域名，须通过ICP备案的验 证，可填写三个域名(例：qq.com)。</p>
+
+        <p>2.进入<a href="https://mp.weixin.qq.com/debug/cgi-bin/apiinfo?t=index&amp;type=%E5%9F%BA%E7%A1%80%E6%94%AF%E6%8C%81&amp;form=%E8%8E%B7%E5%8F%96access_token%E6%8E%A5%E5%8F%A3%20/token">微信公众平台接口调试工具</a>获取access_token,这里需要用到appId和appSecret。</p>
+
+        <ol>
+            <li><a href="https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token=%E4%BD%A0%E8%8E%B7%E5%8F%96%E5%88%B0%E7%9A%84access_token&amp;type=jsapi">https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token=你获取到的access_token&amp;type=jsapi</a></li>
+        </ol>
+
+        <p>将这个地址放到浏览器地址栏访问 ,你会得到如下格式的数据</p>
+
+        <p>{&quot;errcode&quot;:0,&quot;errmsg&quot;:&quot;ok&quot;,&quot;ticket&quot;:&quot;sM4AOVdWfPE4DxkXGEs8VDnS3fBKqYJzuUVszz1ewGT-IiclGQDBjUfES2xmFostIlqRBfQ_O-_Gqyuz3JL4gA&quot;,&quot;expires_in&quot;:7200} 其中的ticket就是本次插件中要用到的数据。</p>
+    </blockquote>
+
+    <h2>准备工作</h2>
+
+    <blockquote>
+        <p>1.引入jquery、sha1加密、weixin、share插件这4个JS文件</p>
+    </blockquote>
+
+    <pre>
+    <code> &lt;script src=&quot;js/jquery-1.11.1.js&quot;&gt;&lt;/script&gt;
+
+        &lt;script src=&quot;js/jquery.sha1.js&quot;&gt;&lt;/script&gt;
+
+        &lt;script src=&quot;http://res.wx.qq.com/open/js/jweixin-1.0.0.js&quot;&gt;&lt;/script&gt;
+
+        &lt;script src=&quot;js/jquery.wechat.share.js&quot;&gt;&lt;/script&gt;
+    </code></pre>
+
+    <blockquote>
+        <p>2.打开jquery.wechat.share.js文件，将下列两个参数改成自己的就好了。</p>
+
+        <p>//appid 公众平台获取</p>
+
+        <p>$appId = &#39;wx2c82806de7e9cc08&#39;;</p>
+
+        <p>//jsapi_ticket</p>
+
+        <p>$ticket = &#39;sM4AOVdWfPE4DxkXGEs8VDnS3fBKqYJzuUVszz1ewGT-IiclGQDBjUfES2xmFostIlqRBfQ_O-_Gqyuz3JL4gA&#39;;</p>
+    </blockquote>
+
+    <h2>使用</h2>
+
+    <blockquote>
+        <p>在页面中添加script脚本</p>
+
+    <pre>
+       &lt;script&gt;
+          $(function(){
+             var shareData = {
+                title: &#39;标题&#39;,
+                desc: &#39;简介&#39;,
+                link: &#39;分享的链接。一般可以用location.href&#39;,
+                imgUrl: &#39;分享的图片链接地址(图片一定要是网络图片地址哦，这样才能保证别人看到的图片是正常显示的)&#39;
+             };
+             $.wechatShare(shareData);
+          })
+       &lt;/script&gt;</pre>
+    </blockquote>
+
+    <h2>完毕</h2>
+
+    <blockquote>
+        <p>是不是感觉非常简单～～</p>
+    </blockquote>
+
+</body>
+</html>
