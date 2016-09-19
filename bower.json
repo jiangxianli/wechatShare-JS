@@ -1,0 +1,21 @@
+{
+  "name": "wechatShare-JS",
+  "homepage": "https://github.com/jiangxianli/wechatShare-JS",
+  "authors": [
+    "江先礼 <997204035@qq.com>"
+  ],
+  "description": "微信JSSDK分享到朋友圈、微博、QQ好友",
+  "main": [
+    "js/jquery-1.11.1.js",
+    "js/jquery.sha1.js",
+    "jquery.wechat.share.js"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

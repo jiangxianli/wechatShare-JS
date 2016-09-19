@@ -19,16 +19,15 @@
 
 3. 使用2）中jsapi_ticket生成signature:
 > 签名生成规则如下：参与签名的字段包括noncestr（随机字符串）, 有效的jsapi_ticket, timestamp（时间戳）, url（当前网页的URL，不包含#及其后面部分） 。对所有待签名参数按照字段名的ASCII 码从小到大排序（字典序）后，使用URL键值对的格式（即key1=value1&key2=value2…）拼接成字符串string1。这里需要注意的是所有参数名均为小写字符。对string1作sha1加密，字段名和字段值都采用原始值，不进行URL 转义。
+
 ## 准备工作
 >1.引入jquery、sha1加密、weixin、share插件这4个JS文件
 
-     <script src="js/jquery-1.11.1.js"></script>
+    <script src="js/jquery-1.11.1.js"></script>
+    <script src="js/jquery.sha1.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script src="js/jquery.wechat.share.js"></script>
 
-     <script src="js/jquery.sha1.js"></script>
-
-     <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
-
-     <script src="js/jquery.wechat.share.js"></script>
 ## 使用
    >在页面中添加script脚本,建议通过后台产生签名的方式写入到前端页面，这样更安全(推荐使用优先级如下)
 

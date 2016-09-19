@@ -1,0 +1,19 @@
+{
+  "name": "wechat-share-js",
+  "version": "1.0.0",
+  "description": "微信JSSDK分享到朋友圈、微博、QQ好友。",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jiangxianli/wechatShare-JS.git"
+  },
+  "author": "997204035@qq.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jiangxianli/wechatShare-JS/issues"
+  },
+  "homepage": "https://github.com/jiangxianli/wechatShare-JS"
+}
