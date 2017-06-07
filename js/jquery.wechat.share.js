@@ -4,11 +4,6 @@ $(function () {
     //随机字符串  签名用
     $random_str = _getRandomString(12);
 
-    //appid 公众平台获取
-    $appId = 'wx2c82806de7e9cc08';
-    //jsapi_ticket
-    $ticket = 'sM4AOVdWfPE4DxkXGEs8VDnS3fBKqYJzuUVszz1ewGT-IiclGQDBjUfES2xmFostIlqRBfQ_O-_Gqyuz3JL4gA';
-
     // 获取长度为len的随机字符串
     function _getRandomString(len) {
         len = len || 32;
